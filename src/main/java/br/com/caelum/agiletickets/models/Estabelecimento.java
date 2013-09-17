@@ -1,26 +1,36 @@
 package br.com.caelum.agiletickets.models;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Estabelecimento {
 
-	// atributo id
 	@Id
 	@GeneratedValue
 	private Long id;
 
-	// atributo nome
 	private String nome;
 
-	// atributo endereco
 	private String endereco;
+	
+	@OneToMany
+	private List<Espetaculo> espetaculos;
+
+	public List<Espetaculo> getEspetaculos() {
+		return espetaculos;
+	}
+
+	public void setEspetaculos(List<Espetaculo> espetaculos) {
+		this.espetaculos = espetaculos;
+	}
 
 	private Boolean temEstacionamento = false;
 
-	// todos os getters e setters
 	public void setId(Long id) {
 		this.id = id;
 	}
