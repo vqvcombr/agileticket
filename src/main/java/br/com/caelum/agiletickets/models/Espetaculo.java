@@ -2,6 +2,7 @@ package br.com.caelum.agiletickets.models;
 
 import static com.google.common.collect.Lists.newArrayList;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -16,7 +17,12 @@ import org.joda.time.LocalDate;
 import org.joda.time.LocalTime;
 
 @Entity
-public class Espetaculo {
+public class Espetaculo  implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8584193159705508135L;
 
 	@Id
 	@GeneratedValue
